@@ -6,6 +6,7 @@ public class LightsOn : MonoBehaviour
 {
     [SerializeField] private GameObject light1;
     [SerializeField] private GameObject light2;
+    public LayerMask interactable;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,12 @@ public class LightsOn : MonoBehaviour
         if( light1.activeInHierarchy &&  light2.activeInHierarchy)
         {
             GetComponent<Animator>().enabled = true;
+            
         }
+    }
+
+    private void SetLayer()
+    {
+        gameObject.layer = interactable;
     }
 }

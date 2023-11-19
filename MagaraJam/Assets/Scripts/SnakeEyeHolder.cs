@@ -7,7 +7,7 @@ public class SnakeEyeHolder : MonoBehaviour, IInteractable
 {
     [SerializeField] private GameObject eye1;
     [SerializeField] private GameObject eye2;
-    [SerializeField] private GameObject light;
+    [SerializeField] private GameObject lights;
     [SerializeField] private TMP_Text infoText;
     // Start is called before the first frame update
     public void Interact()
@@ -44,7 +44,7 @@ public class SnakeEyeHolder : MonoBehaviour, IInteractable
     {
         if (eye1.activeInHierarchy && eye2.activeInHierarchy)
         {
-            light.SetActive(true);
+            lights.SetActive(true);
             Destroy(this);
         }
     }

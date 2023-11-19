@@ -17,16 +17,48 @@ public class Door : MonoBehaviour,IInteractable
         switch (this.gameObject.tag)
         {
             case "KitchenKey":
-                TriggerAnimation("Kitchen");
-                break;
+                if (GameManager.Instance.GetKitchen())
+                {
+                    TriggerAnimation("Kitchen");
+                }
+                else
+                {
+                    LockedText();
+                }
+                    break;
+
             case "BathroomKey":
-                TriggerAnimation("Bathroom");
+                if (GameManager.Instance.GetBathroom())
+                {
+                    TriggerAnimation("Bathroom");
+                }
+                else
+                {
+                    LockedText();
+                }
                 break;
+
             case "BedRoomKey":
-                TriggerAnimation("Bedroom");
+                if (GameManager.Instance.GetBedroom())
+                {
+                    TriggerAnimation("Bedroom");
+                }
+                else
+                {
+                    LockedText();
+                }
                 break;
+
             case "BasementKey":
-                TriggerAnimation("Basement");
+                if (GameManager.Instance.GetBasement())
+                {
+                    TriggerAnimation("Basement");
+                }
+                else
+                {
+                    LockedText();
+                }
+                
                 break;
             default: break;
         }
@@ -38,5 +70,10 @@ public class Door : MonoBehaviour,IInteractable
     private void TriggerAnimation(string tag)
     {
         doorAnimator.SetTrigger(tag);
+    }
+
+    private void LockedText()
+    {
+        GameManager.Instance.InfoText("Kilitli.");
     }
 }

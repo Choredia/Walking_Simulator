@@ -23,6 +23,10 @@ TagManager:
   - Pillow
   - Toilet
   - Box
+  - Lamp
+  - Lamp1
+  - Lamp2
+  - Code
   layers:
   - Default
   - TransparentFX

@@ -6,7 +6,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 
-    private bool knife, drawerKnob, flashlight, powerCellComplete, salonCode,book;
+    private bool knife, drawerKnob, flashlight, powerCellComplete, salonCode,book,lamp;
     private int powerCell, snakeEye;
 
     private bool basement, kitchen, bathroom, bedroom;
@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour
         book = false;
         kitchen = false;
         bathroom = false;
+        lamp=false;
         
         powerCell = 0;
         snakeEye = 0;
@@ -86,6 +87,16 @@ public class GameManager : MonoBehaviour
     {
         kitchen = true;
         InfoText("Mutfak anahtarýný buldum!");
+    }
+    public void Bathroom()
+    {
+        bathroom = true;
+        InfoText("Ýþte banyo anahtarý artýk banyo kapýsýný açabilirim!");
+    }
+    public void Lamp()
+    {
+        lamp = true;
+        InfoText("Ýþe yarayabilir.");
     }
     public void Flashlight()
     {
@@ -190,5 +201,9 @@ public class GameManager : MonoBehaviour
     public bool GetBathroom()
     {
         return bathroom;
+    }
+    public bool GetLamp()
+    {
+        return lamp;
     }
 }

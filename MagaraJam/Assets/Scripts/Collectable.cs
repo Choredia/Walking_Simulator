@@ -47,6 +47,16 @@ public class Collectable : MonoBehaviour, IInteractable
 
                 GameManager.Instance.Bedroom();
                 break;
+            case "BathroomKey":
+
+                GameManager.Instance.Bedroom();
+                break;
+            case "Lamp":
+                GameManager.Instance.Lamp();
+                break;
+            case "Code":
+                GameManager.Instance.SalonCode();
+                break;
             default: 
                 break;
 

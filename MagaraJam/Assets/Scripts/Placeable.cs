@@ -110,6 +110,21 @@ public class Placeable : MonoBehaviour, IInteractable
                 Destroy(this);
 
                 break;
+            case "Lamp1":
+                placedObject.SetActive(true) ;
+                Destroy(this);
+                break;
+            case "Lamp2":
+                if (GameManager.Instance.GetLamp())
+                {
+                    placedObject.SetActive(true);
+                    Destroy(this);
+                }
+                else
+                {
+                    GameManager.Instance.InfoText("Ampul patlamýþ. Mutfakta bir ampul görmüþtüm sanki.");
+                }
+                    break;
 
 
             default:
